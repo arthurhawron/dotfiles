@@ -1,0 +1,76 @@
+#  ____ ____ ____ ____ ____
+# ||d |||u |||n |||s |||t ||
+# ||__|||__|||__|||__|||__||
+# |/__\|/__\|/__\|/__\|/__\|
+
+[global]
+    follow = mouse
+    width = (0, 510)
+    height = 400
+    origin = top-right
+    offset = 15x47
+    scale = 0
+    notification_limit = 0
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    indicate_hidden = yes
+    transparency = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 12
+    frame_width = 2
+    frame_color = "#a7c080"
+    separator_color = "#2d353b"
+    sort = yes
+    font = Mononoki Nerd Font 10
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = false
+    hide_duplicate_count = false
+    show_indicators = no
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 28
+    icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 0
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
+
+[urgency_low]
+    background = "#2d353b"
+    foreground = "#d3c6aa"
+    timeout = 5
+
+[urgency_normal]
+    background = "#2d353b"
+    foreground = "#d3c6aa"
+    timeout = 5
+
+[urgency_critical]
+    background = "#2d353b"
+    foreground = "#d3c6aa"
+    frame_color = "#e76e80"
+    timeout = 0
+
+# vim: ft=cfg

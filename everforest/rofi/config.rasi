@@ -1,0 +1,7 @@
+configuration {
+  modi: "window,drun,ssh,filebrowser,calc";
+  terminal: "alacritty";
+  drun-match-fields: "name";
+  sidebar-mode: true;
+}
+@theme "~/.config/rofi/squared-everforest.rasi"

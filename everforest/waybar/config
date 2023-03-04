@@ -1,0 +1,122 @@
+
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "top",
+
+    "position": "top",
+
+    "height": 30,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock#date",
+	"clock#time"
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "battery#BAT0",
+	      "battery#BAT1",
+        "network",
+    ],
+
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+    
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}  ",
+        "format-icons": ["", "", "", "", "", "", ""]
+    },
+
+
+    "battery#BAT0": {
+        "interval": 10,
+	      "bat": "BAT0",
+        "format": "BAT0: Charging {capacity}%", 
+        "format-discharging": "BAT0: Discharging {capacity}%",
+        "format-full": "BAT0: Full",
+        "tooltip": true
+    },
+
+    "battery#BAT1": {
+        "interval": 10,
+	      "bat": "BAT1",
+        "format": "BAT1: Charging {capacity}%", 
+        "format-discharging": "BAT1: Discharging {capacity}%",
+        "format-full": "BAT1: Full",
+        "tooltip": true
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "  {:%H:%M:%S}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+      "interval": 10,
+      "format": "  {:%e %b %Y}", 
+      "tooltip-format": "{:%e %B %Y}"
+    },
+
+
+    "network": {
+        "interval": 5,
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰖂 {ifname}: {ipaddr}/{cidr}", 
+        "format-disconnected": "  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "sway/mode": {
+        "format": "󰩨 {}",
+        "max-length": 50
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": true,
+        "format": "{icon} {name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}  {volume}% ",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["奄", "奔", "墳"]
+        },
+        "on-click": "alacritty -e alsamixer"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
+
+}

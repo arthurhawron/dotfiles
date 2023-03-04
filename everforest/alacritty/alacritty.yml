@@ -1,0 +1,31 @@
+#  ____ ____ ____ ____ ____ ____ ____ ____ ____
+# ||a |||l |||a |||c |||r |||i |||t |||t |||y ||
+# ||__|||__|||__|||__|||__|||__|||__|||__|||__||
+# |/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
+font:
+  normal:
+    family: Mononoki Nerd Font
+colors:
+  primary:
+    background: '#2d353b'
+    foreground: '#d3c6aa'
+  normal:
+    black:   '#475258'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'
+  bright:
+    black:   '#475258'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'
+window:
+  opacity: 0.8
