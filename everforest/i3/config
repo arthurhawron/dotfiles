@@ -44,10 +44,11 @@ font pango:Mononoki Nerd Font 10
 #############
 exec picom
 exec dunst
-exec nm-applet
+#exec nm-applet
 exec_always ~/.config/polybar/launch.sh
 exec_always autorandr -c
 exec_always nitrogen --restore
+exec /usr/libexec/xfce-polkit
 
 ###############
 # keybindings #

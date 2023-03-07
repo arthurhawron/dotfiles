@@ -1,5 +1,5 @@
 configuration {
-  modi: "window,drun,ssh,filebrowser,calc";
+  modi: "window,drun,ssh,filebrowser,emoji,calc";
   terminal: "alacritty";
   drun-match-fields: "name";
   sidebar-mode: true;
