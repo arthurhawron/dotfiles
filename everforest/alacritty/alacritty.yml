@@ -1,6 +1,7 @@
 font:
   normal:
     family: Mononoki Nerd Font
+
 colors:
   primary:
     background: '#2d353b'

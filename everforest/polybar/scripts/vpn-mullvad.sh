@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
 get_connection_status() {
-    MULLVAD_VPN_STATUS=$(mullvad status | cut -d ' ' -f3 | tr '[:upper:]' '[:lower:]' | sed 's/://g')
+    MULLVAD_VPN_STATUS=$(mullvad status)
     if echo "connecting connected disconnected blocked" | grep -w "$MULLVAD_VPN_STATUS" > /dev/null; then
         echo "$MULLVAD_VPN_STATUS"
     else
         # For unexpected errors, just echo the whole message
-        mullvad status
+         mullvad status | cut -d ' ' -f3
     fi
 }
 
