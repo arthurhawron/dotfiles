@@ -1,0 +1,124 @@
+* {
+    font:   "Mononoki Nerd Font 10";
+
+    bg0:              #3b4252;
+    bg1:              #2e3440;
+    fg0:              #eceff4;
+
+    accent-color:     #81a1c1;
+    urgent-color:     #bf616a;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0;
+    padding:    7;
+    spacing:    0;
+}
+
+window {
+    location:       center;
+    width:          550;
+    y-offset:       0;
+
+    border:         3;
+    border-color:   #81a1c1;
+
+    background-color:   @bg0;
+}
+
+configuration {
+    drun {
+        display-name: "";
+    }
+
+    run {
+        display-name: "";
+    }
+
+    window {
+        display-name: "󱂬";
+    }
+
+    ssh {
+        display-name: "";
+    }
+
+    filebrowser {
+        display-name: "󰥩";
+    }
+
+    emoji {
+        display-name: "󰞅";
+    }
+
+    calc {
+        display-name: "󱖦";
+    }
+}
+
+inputbar {
+    spacing:    8px; 
+    padding:    8px;
+
+    background-color:   @bg1;
+}
+
+prompt, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+prompt {
+    text-color: @accent-color;
+}
+
+textbox {
+    padding:            8px;
+    background-color:   @bg1;
+}
+
+listview {
+    padding:    4px 0;
+    lines:      10;
+    columns:    1;
+
+    fixed-height:   false;
+}
+
+element {
+    padding:    5px;
+    spacing:    5px;
+}
+
+element normal normal {
+    text-color: @fg0;
+}
+
+element normal urgent {
+    text-color: @urgent-color;
+}
+
+element normal active {
+    text-color: @accent-color;
+}
+
+element selected {
+    text-color: @bg0;
+}
+
+element selected normal, element selected active {
+    background-color:   @accent-color;
+}
+
+element selected urgent {
+    background-color:   @urgent-color;
+}
+
+element-icon {
+    size:   3em;
+}
+
+element-text {
+    text-color: inherit;
+}
+

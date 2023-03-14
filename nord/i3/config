@@ -1,0 +1,174 @@
+# i3 config file (v4)
+
+font pango:Mononoki Nerd Font 12
+
+# variables
+set $mod Mod4
+set $term alacritty
+set $launcher rofi -show drun
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+set $textbook ~/Documents/School/Maths/'Year 9 Cambridge 5.3 textbook'/'Year 9 Cambridge Mathematics.pdf' -p 
+
+# autostart
+exec ~/.config/polybar/launch.sh
+exec dunst
+
+
+## basic keybindings ##
+  # start terminal emulator
+    bindsym $mod+Return exec $term 
+
+  # kill window under focus
+    bindsym $mod+Shift+q kill
+
+  # start preferred program launcher
+    bindsym $mod+d exec $launcher
+
+  # reload i3 configuration file
+    bindsym $mod+Shift+c reload
+
+  # exit i3
+    bindsym $mod+Shift+e exit
+
+## navigation ##
+  # move focus with cursor keys 
+    bindsym $mod+Left focus left
+    bindsym $mod+Right focus right
+    bindsym $mod+Up focus up
+    bindsym $mod+Down focus down
+
+  # move window under focus with cursor keys
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Right move right
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Down move down
+
+  # switch to workspace
+    bindsym $mod+1 workspace number $ws1
+    bindsym $mod+2 workspace number $ws2
+    bindsym $mod+3 workspace number $ws3
+    bindsym $mod+4 workspace number $ws4
+    bindsym $mod+5 workspace number $ws5
+    bindsym $mod+6 workspace number $ws6
+    bindsym $mod+7 workspace number $ws7
+    bindsym $mod+8 workspace number $ws8
+    bindsym $mod+9 workspace number $ws9
+    bindsym $mod+0 workspace number $ws10
+
+  # move container to workspace
+    bindsym $mod+Shift+1 move container to workspace number $ws1
+    bindsym $mod+Shift+2 move container to workspace number $ws2
+    bindsym $mod+Shift+3 move container to workspace number $ws3
+    bindsym $mod+Shift+4 move container to workspace number $ws4
+    bindsym $mod+Shift+5 move container to workspace number $ws5
+    bindsym $mod+Shift+6 move container to workspace number $ws6
+    bindsym $mod+Shift+7 move container to workspace number $ws7
+    bindsym $mod+Shift+8 move container to workspace number $ws8
+    bindsym $mod+Shift+9 move container to workspace number $ws9
+    bindsym $mod+Shift+0 move container to workspace number $ws10
+
+  # cycle workspaces
+    bindsym $mod+Tab focus workspace back_and_forth
+
+  # make active window a scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+  # show scratchpad
+    bindsym $mod+minus scratchpad show
+
+
+
+## XF86 keys ##
+  # audio  
+    bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+  # brighness
+    bindsym XF86MonBrightnessDown exec light -A 5%
+    bindsym XF86MonBrightnessUp exec light -U 5%
+
+## layout keybinds ##
+  # split window
+    bindsym $mod+h split h
+    bindsym $mod+v split v 
+
+  # toggle fullscreen for active window
+    bindsym $mod+f fullscreen toggle
+
+  # toggle window switching (tiling/floating)
+    bindsym $mod+space focus mode_toggle
+
+  # toggle floating
+    bindsym $mod+Shift+space floating toggle
+
+  # toggle stick
+    bindsym $mod+Shift+s sticky toggle
+
+
+
+  # modify container layout
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle all
+
+## modes ##
+  # resize
+    mode "resize" {
+        bindsym Left resize shrink width 5px
+        bindsym Right resize grow width 5px
+        bindsym Up resize shrink height 5px
+        bindsym Down resize grow height 5px
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+    }
+    bindsym $mod+r mode "resize" 
+  # textbook
+    mode "textbook" {
+      bindsym a exec zathura ~/Documents/School/Maths/Year\ 9\ Cambridge\ 5.3\ textbook/Answers.pdf
+      bindsym 1 exec $textbook 2;mode "default" 
+      bindsym 2 exec $textbook 88;mode "default" 
+      bindsym 3 exec $textbook 156;mode "default" 
+      bindsym 4 exec $textbook 218;mode "default" 
+      bindsym 5 exec $textbook 288;mode "default" 
+      bindsym 6 exec $textbook 350;mode "default" 
+      bindsym 7 exec $textbook 406;mode "default" 
+      bindsym 8 exec $textbook 470;mode "default" 
+      bindsym 9 exec $textbook 530;mode "default" 
+      bindsym 0 exec $textbook 604;mode "default" 
+
+
+      bindsym Escape mode "default"
+      bindsym Return mode "default"
+      }
+      bindsym $mod+t mode "textbook" 
+
+## decorations ##
+  # window gaps
+    gaps inner 10
+    gaps outer 5
+
+  # titlebar
+    for_window [class="^.*"] border pixel 1
+
+  # colors
+    # class                 border  backgr. text    indicator child_border
+    client.focused          #81a1c1 #81a1c1 #2e3440 #a3be8c   #5e81ac
+    client.focused_inactive #5e81ac #5e81ac #eceff4 #4c566a   #4c566a
+    client.unfocused        #3b4252 #3b4252 #eceff4 #4c566a   #434c5e
+    client.urgent           #bf616a #bf616a #2e3440 #ebcb8b   #d08770
+    client.placeholder      #d8dee9 #d8dee9 #2e3440 #2e3440   #2e3440
+
+    client.background       #2e3440
+
